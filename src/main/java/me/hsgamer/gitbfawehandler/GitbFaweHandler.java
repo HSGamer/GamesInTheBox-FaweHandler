@@ -12,7 +12,7 @@ import java.io.File;
 public final class GitbFaweHandler extends Addon {
 
     @Override
-    public void onEnable() {
+    public void onPostEnable() {
         JavaPlugin.getPlugin(GamesInTheBox.class)
                 .getArenaManager()
                 .getFeature(BlockFeature.class)
