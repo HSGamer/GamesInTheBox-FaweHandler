@@ -8,6 +8,7 @@ import com.sk89q.worldedit.function.pattern.RandomPattern;
 import com.sk89q.worldedit.math.BlockVector3;
 import com.sk89q.worldedit.regions.CuboidRegion;
 import com.sk89q.worldedit.regions.Region;
+import me.hsgamer.gamesinthebox.GamesInTheBox;
 import me.hsgamer.gamesinthebox.blockutil.extra.box.BlockBox;
 import me.hsgamer.gamesinthebox.feature.BlockFeature;
 import me.hsgamer.gamesinthebox.probabilitylib.ProbabilityCollection;
@@ -17,6 +18,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.World;
+import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scheduler.BukkitTask;
 
 import java.util.Collection;
@@ -25,10 +27,10 @@ import java.util.Set;
 import java.util.concurrent.CompletableFuture;
 
 public class FaweBlockHandler implements BlockFeature.BlockHandler {
-    private final GitbFaweHandler plugin;
+    private final GamesInTheBox plugin;
 
-    public FaweBlockHandler(GitbFaweHandler plugin) {
-        this.plugin = plugin;
+    public FaweBlockHandler() {
+        this.plugin = JavaPlugin.getPlugin(GamesInTheBox.class);
     }
 
     private BlockFeature.BlockProcess setBlocks(com.sk89q.worldedit.world.World bukkitWorld, Set<BlockVector3> blockVectors, Pattern pattern) {

@@ -1,6 +1,4 @@
 name: GamesInTheBox-FaweHandler
 version: '${project.version}'
 main: me.hsgamer.gitbfawehandler.GitbFaweHandler
-api-version: 1.14
-depend: [ GamesInTheBox, WorldEdit ]
-authors: [ HSGamer ]
+
