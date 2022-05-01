@@ -15,15 +15,6 @@ public final class GitbFaweHandler extends Addon {
     Plugin plugin;
 
     @Override
-    public void onEnable() {
-        try {
-            plugin = JavaPlugin.getPlugin(GamesInTheBox.class).getPluginLoader().loadPlugin(getClassLoader().getFile());
-        } catch (InvalidPluginException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public void onDisable() {
         if (plugin != null) {
             JavaPlugin.getPlugin(GamesInTheBox.class).getPluginLoader().disablePlugin(plugin);
@@ -32,6 +23,12 @@ public final class GitbFaweHandler extends Addon {
 
     @Override
     public void onPostEnable() {
+        try {
+            plugin = JavaPlugin.getPlugin(GamesInTheBox.class).getPluginLoader().loadPlugin(getClassLoader().getFile());
+        } catch (InvalidPluginException e) {
+            e.printStackTrace();
+        }
+
         JavaPlugin.getPlugin(GamesInTheBox.class)
                 .getArenaManager()
                 .getFeature(BlockFeature.class)
